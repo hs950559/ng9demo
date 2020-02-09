@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './reducers';
+import { extModules } from 'src/build-specifics';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { counterReducer } from './reducers';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({count: counterReducer})
+    StoreModule.forRoot({count: counterReducer}),
+    extModules
   ],
   providers: [],
   bootstrap: [AppComponent]
