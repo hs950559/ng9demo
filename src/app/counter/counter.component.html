@@ -1,1 +1,13 @@
-<p>counter works!</p>
+
+<div class="card card-body">
+  <div>Current Count: {{ count$ | async }}</div>
+</div>
+
+<div class="alert">
+  <button class="btn btn-primary mr-2" (click)="increment()">Increment</button>
+
+  <button class="btn btn-primary mr-2" (click)="decrement()">Decrement</button>
+
+  <button class="btn btn-warning" (click)="reset()">Reset Counter</button>
+</div>
+

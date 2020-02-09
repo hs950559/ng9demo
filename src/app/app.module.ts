@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './reducers';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({count: counterReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
