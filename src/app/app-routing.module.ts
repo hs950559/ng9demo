@@ -10,6 +10,11 @@ const routes: Routes = [
     loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule),
   },
   {
+    path: 'dform',
+    loadChildren: () =>
+      import('./dform/dform.module').then((m) => m.DformModule),
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',
