@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { DformdemoComponent } from './dformdemo/dformdemo.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'dformdemo', component: DformdemoComponent },
   {
     path: 'demo',
     loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule),
   },
-  {
-    path: 'dform',
-    loadChildren: () =>
-      import('./dform/dform.module').then((m) => m.DformModule),
-  },
+  // {
+  //   path: 'dform',
+  //   loadChildren: () =>
+  //     import('./dform/dform.module').then((m) => m.DformModule),
+  // },
   {
     path: '',
     redirectTo: '/home',

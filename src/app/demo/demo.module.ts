@@ -3,13 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { DemoRoutingModule } from './demo-routing.module';
 import { DemoComponent } from './demo.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [DemoComponent],
-  imports: [
-    CommonModule,
-    DemoRoutingModule
-  ]
+  imports: [CommonModule, DemoRoutingModule, ReactiveFormsModule],
 })
-export class DemoModule { }
+export class DemoModule {}

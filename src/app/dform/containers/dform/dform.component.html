@@ -1,6 +1,19 @@
 <h1 class="border-bottom pb-2">TESTFORM1</h1>
-<form class="my-4">
+<form
+  class="my-4 dynamic-form"
+  [formGroup]="form"
+  (submit)="handleSubmit($event)"
+>
   <div class="row">
+    <ng-container
+      *ngFor="let field of config"
+      dynamicField
+      [config]="field"
+      [group]="form"
+    >
+    </ng-container>
+  </div>
+  <!-- <div class="row">
     <div class="form-group col-sm-6">
       <label for="inputState">*Business Area 1</label>
       <select id="inputState" class="form-control">
@@ -178,5 +191,5 @@
     <button class="btn btn-link mr-2">Cancel</button>
     <button class="btn btn-secondary">Submit</button>
     <button class="btn btn-outline-secondary ml-auto">Next Page</button>
-  </div>
+  </div> -->
 </form>

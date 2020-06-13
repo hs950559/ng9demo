@@ -1,0 +1,4 @@
+<app-dform [config]="config" #form="dynamicForm" (formSubmit)="submit($event)">
+</app-dform>
+{{ form.valid }}
+{{ form.value | json }}

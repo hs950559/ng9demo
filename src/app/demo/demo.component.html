@@ -1,1 +1,133 @@
-<p>demo works!</p>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      id="name"
+      placeholder="Name"
+      formControlName="name"
+      [class.is-invalid]="name.dirty && name.invalid"
+    />
+    <div class="form-text" *ngIf="name.pending">
+      Checking if name is unique...
+    </div>
+    <div *ngIf="name.dirty && name.invalid" class="invalid-feedback">
+      <small class="form-text" *ngIf="name.errors.required">
+        Name is required
+      </small>
+      <small class="form-text" *ngIf="name.errors.cannotContainSpace">
+        Should not contain empty space
+      </small>
+      <small class="form-text" *ngIf="name.errors.shouldBeUnique">
+        Should not be hemant
+      </small>
+      <small class="form-text" *ngIf="name.errors.minlength">
+        Minimum {{ name.errors.minlength.requiredLength }} char required, you
+        entered only {{ name.errors.minlength.actualLength }}
+      </small>
+      <small class="form-text" *ngIf="name.errors.maxlength">
+        Minimum {{ name.errors.maxlength.requiredLength }} char required, you
+        entered only {{ name.errors.maxlength.actualLength }}
+      </small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      id="email"
+      aria-describedby="helpId"
+      placeholder="Name"
+    />
+  </div>
+  <div formGroupName="address">
+    <div class="form-group">
+      <label for="city">City</label>
+      <input
+        type="text"
+        class="form-control"
+        city="city"
+        id="city"
+        placeholder="city"
+        formControlName="city"
+      />
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <input
+        type="text"
+        class="form-control"
+        state="state"
+        id="state"
+        placeholder="state"
+        formControlName="state"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="">Add Skill</label>
+    <input
+      type="text"
+      class="form-control"
+      name="skill"
+      id=""
+      #skill
+      placeholder="Add new skill"
+      (keyup.enter)="addSkill(skill)"
+    />
+  </div>
+  <ul class="list-group mt-2">
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+      *ngFor="let skill of skills.controls"
+    >
+      {{ skill.value }}
+      <span
+        class="badge badge-danger badge-pill"
+        (click)="removeSkill(skill.value)"
+      >
+        <i class="ti-close"></i>
+      </span>
+    </li>
+  </ul>
+  <!-- <div class="form-check">
+    <label class="form-check-label">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="rememberMe"
+        name="rememberMe"
+        ngModel
+      />
+      Remember Me
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="skill">Your Tech Skil</label>
+    <select class="form-control" name="skill" id="skill" ngModel>
+      <option *ngFor="let skill of skills" [ngValue]="skill">
+        {{ skill.name }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <div class="form-check" *ngFor="let skill of skills">
+      <label class="form-check-label">
+        <input
+          type="radio"
+          class="form-check-input"
+          name="gendar"
+          [value]="skill.id"
+          ngModel
+        />
+        {{ skill.name }}
+      </label>
+    </div>
+  </div> -->
+  <button class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+</form>
