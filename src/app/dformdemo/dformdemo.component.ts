@@ -27,11 +27,48 @@ export class DformdemoComponent implements AfterViewInit {
       validation: [Validators.required, Validators.minLength(4)],
     },
     {
-      type: 'input',
-      label: 'Username',
-      name: 'name2',
-      placeholder: 'Enter your username',
-      validation: [Validators.required, Validators.minLength(4)],
+      type: 'textarea',
+      label: 'Address 1',
+      name: 'address1',
+      placeholder: 'Enter your street 1',
+    },
+    {
+      type: 'checkbox',
+      label: 'Skills',
+      name: 'Skills',
+      options: [
+        {
+          name: 'JavaScript',
+          value: 'js',
+        },
+        {
+          name: 'Angular',
+          value: 'angular',
+        },
+        {
+          name: 'React',
+          value: 'react',
+        },
+        {
+          name: 'Node JS',
+          value: 'nodejs',
+        },
+      ],
+    },
+    {
+      type: 'radio',
+      label: 'Gendar',
+      name: 'Gender',
+      options: [
+        {
+          name: 'Male',
+          value: 'male',
+        },
+        {
+          name: 'Female',
+          value: 'female',
+        },
+      ],
     },
     {
       type: 'select',

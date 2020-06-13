@@ -23,7 +23,7 @@ import { Field } from '../../models/fiels.interface';
   `,
 })
 export class FormButtonComponent implements Field {
-  @HostBinding('class') someField = 'd-flex mt-3 w-100';
+  @HostBinding('class') someField = 'd-flex col mt-3 w-100';
   config: FieldConfig;
   group: FormGroup;
 }

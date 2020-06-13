@@ -16,11 +16,17 @@ import { FormSelectComponent } from '../form-select/form-select.component';
 
 import { FieldConfig } from '../../models/field-config.interface';
 import { Field } from '../../models/fiels.interface';
+import { FormTextareaComponent } from '../form-textarea/form-textarea.component';
+import { FormCheckboxComponent } from '../form-checkbox/form-checkbox.component';
+import { FormRadioComponent } from '../form-radio/form-radio.component';
 
 const components: { [type: string]: Type<Field> } = {
   button: FormButtonComponent,
   input: FormInputComponent,
   select: FormSelectComponent,
+  textarea: FormTextareaComponent,
+  checkbox: FormCheckboxComponent,
+  radio: FormRadioComponent,
 };
 
 @Directive({
