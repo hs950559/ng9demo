@@ -10,15 +10,17 @@ import { Field } from '../../models/fiels.interface';
   styleUrls: ['form-button.component.scss'],
   template: `
     <ng-container [formGroup]="group">
-      <button class="btn btn-link mr-2">Cancel</button>
+      <button type="button" class="btn btn-link mr-2">Cancel</button>
       <button
         [disabled]="config.disabled"
         type="submit"
-        class="btn btn-secondary"
+        class="btn btn-primary"
       >
         {{ config.label }}
       </button>
-      <button class="btn btn-outline-secondary ml-auto">Next Page</button>
+      <button type="button" class="btn btn-outline-secondary ml-auto">
+        Next Page
+      </button>
     </ng-container>
   `,
 })

@@ -88,7 +88,7 @@ export class DformComponent implements OnInit, OnChanges {
 
     this.config = this.config.map((item) => {
       if (item.name === name) {
-        item.disabled = disable;
+        // item.disabled = disable;
       }
       return item;
     });

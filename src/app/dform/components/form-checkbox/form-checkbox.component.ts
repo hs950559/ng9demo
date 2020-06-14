@@ -1,6 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { FieldConfig } from '../../models/field-config.interface';
 import { FormGroup } from '@angular/forms';
+import { Field } from '../../models/fiels.interface';
 
 @Component({
   selector: 'app-form-checkbox',

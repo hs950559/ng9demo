@@ -95,7 +95,7 @@ export class DformdemoComponent implements AfterViewInit {
     });
 
     this.form.setDisabled('submit', true);
-    this.form.setValue('name', 'Todd Motto');
+    this.form.setValue('name', 'Tejas');
   }
 
   submit(value: { [name: string]: any }) {
