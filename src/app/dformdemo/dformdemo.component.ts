@@ -35,24 +35,11 @@ export class DformdemoComponent implements AfterViewInit {
     {
       type: 'checkbox',
       label: 'Skills',
-      name: 'skill',
+      name: 'skills',
+      array: true,
       options: [
-        {
-          name: 'JavaScript',
-          value: 'js',
-        },
-        {
-          name: 'Angular',
-          value: 'angular',
-        },
-        {
-          name: 'React',
-          value: 'react',
-        },
-        {
-          name: 'Node JS',
-          value: 'nodejs',
-        },
+        { name: 'JS', selected: true, id: 12 },
+        { name: 'CSS', selected: false, id: 2 },
       ],
     },
     {

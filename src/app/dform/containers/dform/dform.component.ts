@@ -65,10 +65,21 @@ export class DformComponent implements OnInit, OnChanges {
 
   createGroup() {
     const group = this.fb.group({});
-    this.controls.forEach((control) =>
-      group.addControl(control.name, this.createControl(control))
-    );
+    this.controls.forEach((control) => {
+      if (control.array) {
+        group.addControl(control.name, this.createFormArray(control));
+      } else {
+        group.addControl(control.name, this.createControl(control));
+      }
+    });
     return group;
+  }
+
+  createFormArray(control: any) {
+    const arr = control.options.map((option) => {
+      return this.fb.control(option.selected);
+    });
+    return this.fb.array(arr);
   }
 
   createControl(config: FieldConfig) {

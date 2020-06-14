@@ -1,4 +1,4 @@
-import { ValidatorFn } from '@angular/forms';
+import { ValidatorFn, FormGroup, FormArray } from '@angular/forms';
 
 export interface FieldConfig {
   disabled?: boolean;
@@ -10,4 +10,6 @@ export interface FieldConfig {
   type: string;
   validation?: ValidatorFn[];
   value?: any;
+  group?: boolean;
+  array?: boolean;
 }
