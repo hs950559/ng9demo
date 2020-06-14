@@ -34,6 +34,7 @@ import { FormGroupComponent } from './components/form-group/form-group.component
     FormTextareaComponent,
     FormCheckboxComponent,
     FormRadioComponent,
+    FormGroupComponent,
   ],
 })
 export class DformModule {}

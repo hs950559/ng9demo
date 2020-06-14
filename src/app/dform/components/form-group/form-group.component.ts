@@ -14,10 +14,10 @@ export class FormGroupComponent implements Field {
   config: FieldConfig;
   group: FormGroup;
 
-  getFieldConfig(field) {
-    console.log(this.config);
-    console.log(field);
-    field.name = `${this.config.name}.${field.name}`;
-    return field;
-  }
+  // getFieldConfig(field) {
+  //   console.log(this.config);
+  //   console.log(field);
+  //   field.name = `${this.config.name}.${field.name}`;
+  //   return field;
+  // }
 }
