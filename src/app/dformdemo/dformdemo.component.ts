@@ -27,12 +27,6 @@ export class DformdemoComponent implements AfterViewInit {
       validation: [Validators.required, Validators.minLength(4)],
     },
     {
-      type: 'textarea',
-      label: 'Address 1',
-      name: 'address1',
-      placeholder: 'Enter your street 1',
-    },
-    {
       type: 'checkbox',
       label: 'Skills',
       name: 'skills',
@@ -64,6 +58,38 @@ export class DformdemoComponent implements AfterViewInit {
       options: ['Pizza', 'Hot Dogs', 'Knakworstje', 'Coffee'],
       placeholder: 'Select an option',
       validation: [Validators.required],
+    },
+    {
+      type: 'select',
+      label: 'Favourite Movie',
+      name: 'movie',
+      options: ['Broom!', 'Droom', 'Paaa', 'Old Man'],
+      placeholder: 'Select an option',
+    },
+    {
+      type: 'textarea',
+      label: 'Comment',
+      name: 'comment',
+    },
+    {
+      type: 'group',
+      label: 'Address',
+      name: 'address',
+      group: true,
+      children: [
+        {
+          type: 'input',
+          label: 'City',
+          name: 'city',
+          placeholder: 'Enter City',
+        },
+        {
+          type: 'input',
+          label: 'State',
+          name: 'state',
+          placeholder: 'Enter State',
+        },
+      ],
     },
     {
       label: 'Submit',

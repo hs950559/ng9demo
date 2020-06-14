@@ -18,7 +18,7 @@ import { Field } from '../../models/fiels.interface';
             class="form-check-input"
             [formControl]="option"
           />
-          {{ config.options[i].name }}
+          {{ (config?.options)[i]?.name }}
         </label>
       </div>
     </ng-container>

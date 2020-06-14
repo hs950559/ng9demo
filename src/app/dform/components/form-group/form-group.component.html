@@ -1,0 +1,24 @@
+<ng-container [formGroup]="group">
+  <fieldset class="border p-2">
+    <legend class="w-auto group-label">{{ config.label }}</legend>
+    <div formGroupName="{{ config.name }}">
+      <!-- <ng-container
+        *ngFor="let field of config.children"
+        dynamicField
+        [config]="field"
+        [group]="group"
+      >
+      </ng-container> -->
+
+      <div class="form-group" *ngFor="let field of config.children">
+        <label for="{{ field.name }}">{{ field.label }}</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="{{ field.label }}"
+          formControlName="{{ field.name }}"
+        />
+      </div>
+    </div>
+  </fieldset>
+</ng-container>

@@ -19,6 +19,7 @@ import { Field } from '../../models/fiels.interface';
 import { FormTextareaComponent } from '../form-textarea/form-textarea.component';
 import { FormCheckboxComponent } from '../form-checkbox/form-checkbox.component';
 import { FormRadioComponent } from '../form-radio/form-radio.component';
+import { FormGroupComponent } from '../form-group/form-group.component';
 
 const components: { [type: string]: Type<Field> } = {
   button: FormButtonComponent,
@@ -27,6 +28,7 @@ const components: { [type: string]: Type<Field> } = {
   textarea: FormTextareaComponent,
   checkbox: FormCheckboxComponent,
   radio: FormRadioComponent,
+  group: FormGroupComponent,
 };
 
 @Directive({

@@ -42,7 +42,7 @@ export class DformComponent implements OnInit, OnChanges {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.form = this.createGroup();
+    this.form = this.createGroup(this.controls);
   }
 
   ngOnChanges() {
@@ -63,11 +63,13 @@ export class DformComponent implements OnInit, OnChanges {
     }
   }
 
-  createGroup() {
+  createGroup(fieldControls) {
     const group = this.fb.group({});
-    this.controls.forEach((control) => {
+    fieldControls.forEach((control) => {
       if (control.array) {
         group.addControl(control.name, this.createFormArray(control));
+      } else if (control.group) {
+        group.addControl(control.name, this.createGroup(control.children));
       } else {
         group.addControl(control.name, this.createControl(control));
       }

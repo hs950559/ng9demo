@@ -11,6 +11,7 @@ import { FormSelectComponent } from './components/form-select/form-select.compon
 import { FormRadioComponent } from './components/form-radio/form-radio.component';
 import { FormCheckboxComponent } from './components/form-checkbox/form-checkbox.component';
 import { FormTextareaComponent } from './components/form-textarea/form-textarea.component';
+import { FormGroupComponent } from './components/form-group/form-group.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormTextareaComponent } from './components/form-textarea/form-textarea.
     FormRadioComponent,
     FormCheckboxComponent,
     FormTextareaComponent,
+    FormGroupComponent,
   ],
   imports: [ReactiveFormsModule, CommonModule, DformRoutingModule],
   exports: [DformComponent],
