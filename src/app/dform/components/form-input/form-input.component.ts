@@ -17,7 +17,16 @@ import { Field } from '../../models/fiels.interface';
         id="{{ config.id }}"
         [attr.placeholder]="config.placeholder"
         [formControlName]="config.name"
+        [class.is-invalid]="field.dirty && field.invalid"
       />
+      <div *ngIf="field.dirty && field.invalid" class="invalid-feedback">
+        <small class="form-text" *ngIf="field.errors.required">
+          {{ config.label }} is required
+        </small>
+        <small class="form-text" *ngIf="field.errors.minlength">
+          Min {{ field.errors.minlength.requiredLength }} char required
+        </small>
+      </div>
     </ng-container>
   `,
 })
@@ -25,4 +34,8 @@ export class FormInputComponent implements Field {
   @HostBinding('class') someField = 'form-group col-sm-6';
   config: FieldConfig;
   group: FormGroup;
+
+  get field() {
+    return this.group.get(this.config.name);
+  }
 }

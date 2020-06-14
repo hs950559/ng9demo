@@ -35,6 +35,9 @@ export class DformComponent implements OnInit, OnChanges {
   get value() {
     return this.form.value;
   }
+  get errors() {
+    return this.form.errors;
+  }
 
   constructor(private fb: FormBuilder) {}
 
@@ -80,21 +83,25 @@ export class DformComponent implements OnInit, OnChanges {
   }
 
   setDisabled(name: string, disable: boolean) {
-    if (this.form.controls[name]) {
-      const method = disable ? 'disable' : 'enable';
-      this.form.controls[name][method]();
-      return;
-    }
-
-    this.config = this.config.map((item) => {
-      if (item.name === name) {
-        // item.disabled = disable;
+    setTimeout(() => {
+      if (this.form.controls[name]) {
+        const method = disable ? 'disable' : 'enable';
+        this.form.controls[name][method]();
+        return;
       }
-      return item;
+
+      this.config = this.config.map((item) => {
+        if (item.name === name) {
+          item.disabled = disable;
+        }
+        return item;
+      });
     });
   }
 
   setValue(name: string, value: any) {
-    this.form.controls[name].setValue(value, { emitEvent: true });
+    setTimeout(() => {
+      this.form.controls[name].setValue(value, { emitEvent: true });
+    });
   }
 }

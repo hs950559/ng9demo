@@ -14,10 +14,10 @@ export class DformdemoComponent implements AfterViewInit {
   config: FieldConfig[] = [
     {
       type: 'input',
-      label: 'Firs Name',
+      label: 'First Name',
       name: 'name',
       placeholder: 'Enter your name',
-      validation: [Validators.required, Validators.minLength(4)],
+      validation: [Validators.required, Validators.minLength(2)],
     },
     {
       type: 'input',
@@ -35,7 +35,7 @@ export class DformdemoComponent implements AfterViewInit {
     {
       type: 'checkbox',
       label: 'Skills',
-      name: 'Skills',
+      name: 'skill',
       options: [
         {
           name: 'JavaScript',
@@ -57,8 +57,8 @@ export class DformdemoComponent implements AfterViewInit {
     },
     {
       type: 'radio',
-      label: 'Gendar',
-      name: 'Gender',
+      label: 'Gender',
+      name: 'gender',
       options: [
         {
           name: 'Male',
@@ -94,7 +94,7 @@ export class DformdemoComponent implements AfterViewInit {
       }
     });
 
-    this.form.setDisabled('submit', true);
+    // this.form.setDisabled('submit', true);
     this.form.setValue('name', 'Tejas');
   }
 
